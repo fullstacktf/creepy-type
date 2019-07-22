@@ -1,5 +1,5 @@
 {
-  "name": "redux",
+  "name": "redux-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
     "typescript": "3.5.3"
   },
   "scripts": {
