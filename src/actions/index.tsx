@@ -17,3 +17,5 @@ export const decrementCounter =
 (delta: number): DecrementAction => ({ type: 'DECREMENT_COUNTER', delta });
 
 
+type ActionType = IncrementAction | DecrementAction;
+export default ActionType

@@ -1,9 +1,9 @@
-import { IncrementAction, DecrementAction } from '../actions';
+//import { IncrementAction, DecrementAction } from '../actions';
 import { CounterState } from './index';
-
+import ActionType from '../actions'
 const initialState: CounterState = { value: 0 };
 
-type ActionType = IncrementAction | DecrementAction;
+//type ActionType = IncrementAction | DecrementAction;
 
  
 const counter = (state = initialState, action: ActionType) => {
