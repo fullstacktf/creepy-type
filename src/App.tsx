@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as Redux from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer, { AppState } from './reducers';
+import { decrementCounter, incrementCounter } from './actions';
+import Header from './containers/Header'
+import * as React from 'react';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const store: Redux.Store<AppState> = Redux.createStore(rootReducer);
+
+function increment() {
+ store.dispatch(incrementCounter(1));
+}
+
+function decrement() {
+ store.dispatch(decrementCounter(1));
+}
+
+class App extends React.Component{
+  render(){
+    return <Provider store={store}>
+        <Header/>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+    </Provider>;
+  };
 }
 
 export default App;
